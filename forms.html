@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather Improvement Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 450px;
+        background: white;
+        padding: 25px;
+        margin: 60px auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #2e7d32;
+    }
+
+    p {
+        text-align: center;
+        color: #444;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        display: block;
+        color: #333;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #aaa;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 90px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #1b5e20;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Help Improve the Weather</h2>
+    <p>Tell us how you can contribute to a better climate.</p>
+
+    <form>
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Your Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>How Can You Help?</label>
+        <select>
+            <option>Plant more trees</option>
+            <option>Reduce electricity usage</option>
+            <option>Use public transport</option>
+            <option>Reduce plastic usage</option>
+            <option>Participate in clean-up drives</option>
+            <option>Other</option>
+        </select>
+
+        <label>Your Suggestion</label>
+        <textarea placeholder="Write your idea or contribution here..."></textarea>
+
+        <button type="submit">Submit Response</button>
+    </form>
+</div>
+
+</body>
+</html>

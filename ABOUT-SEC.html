@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change Awareness</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 3rem;
+            text-shadow: none;
+        }
+
+        .hex-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px auto;
+            flex-wrap: wrap;
+            width: 90%;
+        }
+
+        .hex-card {
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            position: relative;
+            transition: 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            color: white ;
+            font-weight: 600;
+            box-shadow: 0 0 18px rgba(0,0,0,0.6);
+            background-image: url('wood-texture.jpg'); /* wood texture */
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+
+        .hex-card:hover {
+            transform: translateY(-8px) scale(1.07);
+            background: rgba(0, 0, 0, 0.60);
+            box-shadow: 0 0 28px rgba(255,255,255,0.4);
+        }
+
+        /* Normal cards */
+        .section-title {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            margin: 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .info-card {
+            width: 300px;
+            background: rgba(0, 0, 0, 0.55); /* more visible */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            transition: 0.4s;
+            color:white ;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Forest Cinematic Video -->
+    <video autoplay muted loop playsinline id="bgVideo" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1; object-fit: cover;">
+        <source src="videoplayback.mp4" type="video/mp4">
+    </video>
+
+    <h1>Climate Change Awareness</h1>
+
+    <!-- Animated Hex Cards Section -->
+    <div class="hex-container">
+        <div class="hex-card">Climate change is causing rising temperatures worldwide.</div>
+        <div class="hex-card">Melting glaciers contribute to rising sea levels.</div>
+        <div class="hex-card">Extreme weather events are becoming more frequent.</div>
+        <div class="hex-card">Human activities are the primary cause of global warming.</div>
+        <div class="hex-card">Deforestation increases CO₂ levels, worsening climate change.</div>
+    </div>
+
+    <!-- Normal Cards Section -->
+    <h2 class="section-title">How Climate Change Affects Us</h2>
+    <div class="info-container">
+        <div class="info-card">
+            <h3>Heat Waves</h3>
+            Climate change increases the frequency of dangerous heat waves affecting health and agriculture.
+        </div>
+        <div class="info-card">
+            <h3>Flooding</h3>
+            Rising sea levels and extreme rainfall increase the risk of severe floods worldwide.
+        </div>
+        <div class="info-card">
+            <h3>Food Shortages</h3>
+            Crop failures become more common due to unpredictable weather patterns.
+        </div>
+    </div>
+
+    <h2 class="section-title">What We Can Do Daily</h2>
+    <div class="info-container">
+        <div class="info-card">
+            <h3>Save Electricity</h3>
+            Turn off unused lights, appliances, and switch to energy-efficient LEDs.
+        </div>
+        <div class="info-card">
+            <h3>Use Reusable Products</h3>
+            Reduce single-use plastics by using reusable bottles and bags.
+        </div>
+        <div class="info-card">
+            <h3>Plant Trees</h3>
+            Planting trees helps absorb CO₂ and cool the environment naturally.
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<style>
+    /* ================= ANIMATIONS ================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Image Zoom Animation */
+.hero-image img {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1.2s ease;
+}
+
+.hero-image img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Service card hover animation (already have lift, adding glow) */
+.service-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Portfolio image zoom on load */
+.portfolio-item img {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: all 1s ease;
+}
+
+.portfolio-item img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ------------------ GLOBAL CSS ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------ NAVBAR ------------------ */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+}
+
+/* ------------------ HERO SECTION ------------------ */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 100px 20px 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    background: #e74c3c;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #c0392b;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ------------------ ABOUT SECTION ------------------ */
+.about {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ------------------ MEDIA QUERY FIXED ------------------ */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#home">Logo</a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero fade-in ">
+    <div class="hero-content">
+        <h1>Welcome to Our Website</h1>
+        <p>We create amazing digital experiences that help businesses grow</p>
+        <button class="cta-button">Get Started</button>
+    </div>
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/500x400" alt="Hero Image">
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about fade-in ">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We are a creative team...</p>
+    </div>
+</section>
+
+<!-- (Other sections remain same: services, portfolio, contact, footer) -->
+
+<script>
+// Mobile Menu Script
+const toggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+toggle.onclick = () => {
+    navMenu.classList.toggle("active");
+};
+</script>
+
+</body>
+</html>
